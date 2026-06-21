@@ -9,4 +9,8 @@ public class HiController {
     public String sayHi(){
         return "hi";
     }
+    @GetMapping("/hello")
+    public String sayHello(){
+        return "hello";
+    }
 }
