@@ -1,7 +1,7 @@
 FROM gradle:9.5.1-jdk25 AS build
 WORKDIR /home/app
 COPY --chown=gradle:gradle . /home/app
-RUN chmod +x ./gradlew && ./gradlew build -x test
+RUN gradle build -x test --no-daemon
 # -------------------------
 # Build 단계에서 생성된 JAR을 이용
 FROM eclipse-temurin:25-jre
